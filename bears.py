@@ -8,16 +8,16 @@ def bears(n):
     if n == 42:
         return True
 
-    if (n % 5)==0 and bears(n-42):                  #Divisible by 5 subtract 42
+    if (n % 5)==0 and bears(n-42):                  #Divisible by 5 subtract 42 & recursive call
         return True
 
-    if (n % 2)==0 and bears(n//2):                  #Divisible by 2 divide by 2
+    if (n % 2)==0 and bears(n//2):                  #Divisible by 2 divide by 2 & recursive call
         return True
 
     if (n % 4)==0 or (n % 3)==0:                    #Divisible by 3 or 4 use formula
 
         one = (n % 10)                              #Units
         two = (n % 100)//10                         #Tens
-        return one*two != 0 and bears(n-one*two)
+        return one*two != 0 and bears(n-one*two)    #return cannot be 0 & recusrive call
 
     return False
