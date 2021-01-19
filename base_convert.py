@@ -14,8 +14,10 @@ def convert(num, b):
 
     quo = num//b                            #dividing the quotient by the base
     rem = num%b                             #getting the remainder
+
     if b > 10:                              #number assignments for bases greater than 10
         if rem > 9:
-            rem = chr(rem + 55)             #Ascii table conversions for ABCDEF
+            rem = chr(rem + 55)             #Ascii table conversions to generate ABCDEF
+
     new = str(convert(quo,b)) + str(rem)    #recursive call adding the remainders in reverse order
     return new
