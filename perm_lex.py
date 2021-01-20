@@ -11,8 +11,8 @@ def perm_gen_lex(a):
     for letter in a:
         simple = a.replace(letter,'')       #Reduced: remove a letter to create a simpler string
 
-        for perm in perm_gen_lex(simple):   #generate all permutations
+        for perm in perm_gen_lex(simple):   #generate all permutations & recursive call
 
             list.append(letter + perm)      #Combined: add the character back to the permutations and append them to a list
 
-    return list
+    return list                             #return our list with permutations
